@@ -1,6 +1,27 @@
 return {
     descriptions = {
+        Other = {
+            card_x_mult = {
+                text = {
+                    "{X:mult,C:white} X#1#{} 倍率",
+                },
+            },
+            card_no_rank_suit = {
+                text = {
+                    "无点数和花色",
+                },
+            },
+        },
         Joker = {
+            j_gen_placeholder_1 = {
+                name = '反逆之焰',
+                text = {
+                    '使用消耗牌修改手牌时',
+                    '摧毁该牌并转化成',
+                    '带有 {X:mult,C:white}X#1#{} 倍率和',
+                    '{C:chips}+#2#{} 筹码的 {C:attention}石头牌{}',
+                },
+            },
             j_gen_in_tune = {
                 name = '合拍',
                 text = {
