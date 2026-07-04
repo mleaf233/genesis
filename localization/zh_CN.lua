@@ -13,6 +13,15 @@ return {
             },
         },
         Joker = {
+            j_gen_eight_bit_detector = {
+                name = '8bit探测器',
+                text = {
+                    '弃牌时改为从手牌中',
+                    '随机弃掉{C:attention}#1#{}张牌',
+                    '所有打出的牌按随机顺序',
+                    '总共计分{C:attention}#2#{}次',
+                },
+            },
             j_gen_placeholder_1 = {
                 name = '反逆之焰',
                 text = {

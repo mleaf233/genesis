@@ -1,0 +1,35 @@
+[manifest]
+version = "1.0.0"
+dump_lua = true
+priority = 0
+
+[[patches]]
+[patches.pattern]
+target = 'functions/state_events.lua'
+pattern = '''local highlighted_count = math.min(#G.hand.highlighted, G.discard.config.card_limit - #G.play.cards)'''
+position = 'before'
+match_indent = true
+payload = '''
+if Genesis_8BitDetector then
+    Genesis_8BitDetector.retarget_discard_highlight(hook)
+end
+'''
+
+[[patches]]
+[patches.pattern]
+target = '=[SMODS _ "src/utils.lua"]'
+pattern = '''
+function SMODS.calculate_main_scoring(context, scoring_hand)
+    for _, card in ipairs(context.cardarea.cards) do
+'''
+position = 'at'
+match_indent = true
+payload = '''
+function SMODS.calculate_main_scoring(context, scoring_hand)
+    if Genesis_8BitDetector and Genesis_8BitDetector.should_use_random_scoring(context, scoring_hand) then
+        Genesis_8BitDetector.calculate_main_scoring(context, scoring_hand)
+        return
+    end
+
+    for _, card in ipairs(context.cardarea.cards) do
+'''

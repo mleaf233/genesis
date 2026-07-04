@@ -13,6 +13,16 @@ return {
             },
         },
         Joker = {
+            j_gen_eight_bit_detector = {
+                name = '8-Bit Detector',
+                text = {
+                    'Discarding instead randomly discards',
+                    '{C:attention}#1#{} cards from your hand',
+                    'All played cards score',
+                    'in a random order',
+                    'for a total of {C:attention}#2#{} times',
+                },
+            },
             j_gen_placeholder_1 = {
                 name = 'アポカリプスに反逆の焔を焚べろ',
                 text = {
